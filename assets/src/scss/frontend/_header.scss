@@ -1,0 +1,273 @@
+@use '../abstracts';
+
+.gpwp-header {
+	padding: 11px 0 10px;
+	background-color: abstracts.$green-press-wp-header-bg-color;
+
+	&-wrap {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+		width: 100%;
+		gap: 20px;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.site-branding {
+		display: inline-flex;
+		align-items: center;
+		text-align: left;
+		flex-shrink: 0;
+		gap: 20px;
+
+		@include abstracts.media-breakpoint(max-767) {
+			gap: 8px;
+		}
+
+		a {
+			line-height: normal;
+			flex-shrink: 0;
+			text-decoration: underline;
+
+			img {
+				height: 75px;
+				width: auto;
+
+				@include abstracts.media-breakpoint(max-767) {
+					height: 55px;
+				}
+			}
+		}
+
+		.site-title {
+			font-size: 20px;
+			line-height: 1.2em;
+			word-wrap: break-word;
+			font-weight: 700;
+			text-transform: capitalize;
+			color: abstracts.$green-press-wp-site-title-color;
+
+			a {
+				color: abstracts.$green-press-wp-site-title-color;
+				text-decoration: none;
+			}
+		}
+
+		.site-description {
+			margin-top: 3px;
+			line-height: 20.16px;
+			text-transform: capitalize;
+			color: abstracts.$green-press-wp-site-tagline-color;
+
+			@include abstracts.media-breakpoint(max-767) {
+				font-size: 15px;
+				line-height: 18px;
+				margin-top: 0px;
+			}
+		}
+	}
+}
+
+.gpwp-menu {
+	@mixin menus-font-style {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 26px;
+		text-transform: uppercase;
+		color: abstracts.$green-press-wp-header-text-color;
+	}
+
+	@mixin menus-list-style {
+		position: relative;
+		display: inline-block;
+	}
+
+	ul {
+		position: relative;
+
+		li {
+			@include menus-list-style();
+			margin-right: 15px;
+			padding-right: 20px;
+
+			&::after {
+				content: "/";
+				position: absolute;
+				top: 0;
+				right: 0;
+				color: abstracts.$green-press-wp-header-text-color;
+			}
+
+			@include abstracts.media-breakpoint(max-767) {
+				margin-right: 10px;
+				padding-right: 15px;
+			}
+
+			a {
+				@include menus-font-style();
+				position: relative;
+				z-index: 999;
+				text-decoration: underline 1.5px;
+				text-decoration-color: abstracts.$green-press-wp-header-text-color;
+				-moz-text-decoration-color: abstracts.$green-press-wp-header-text-color;
+			}
+
+			&:last-child {
+				margin-right: 0;
+				padding-right: 0;
+
+				&::after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// Alignment setting
+.gpwp-header-menu-left {
+	.gpwp-header-wrap {
+		flex-direction: row-reverse;
+	}
+
+	.site-branding {
+		flex-direction: row-reverse;
+	}
+}
+
+.gpwp-header-menu-bottom {
+	.gpwp-header-wrap {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+	}
+}
+
+.gpwp-footer-menu-right {
+	.site-info {
+		@media screen and (min-width: 400px) {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+.header-nav-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+
+	.menu-text-link {
+		color: abstracts.$green-press-wp-header-text-color;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.main-navigation {
+	@media screen and (max-width: 767px) {
+		flex-basis: calc(100% - 40px);
+	}
+}
+
+.gpwp-theme-header {
+	&__search-container {
+		position: relative;
+		display: inline-block;
+
+		@media screen and (max-width: 767px) {
+			flex-basis: 32px;
+		}
+
+		&:focus-within .gpwp-theme-header__search-overlay {
+			width: 100%;
+			/* Adjust as needed */
+			opacity: 1;
+			left: 0;
+		}
+
+		&.is-active .gpwp-theme-header__search-overlay {
+			width: 100%;
+			opacity: 1;
+			left: 0;
+		}
+
+		button {
+			background-color: transparent;
+			border: 0;
+			color: currentColor;
+			cursor: pointer;
+
+			svg {
+				position: relative;
+				top: 4px;
+			}
+		}
+
+		.search-form {
+			display: flex;
+
+			label {
+				width: 310px;
+
+				@include abstracts.media-breakpoint(max-480) {
+					width: 205px;
+				}
+			}
+		}
+
+		.search-submit {
+			margin: 0;
+			color: #fff;
+			border: none;
+			background-color: #333333;
+			border-radius: 0 6px 6px 0;
+			font-size: 16px;
+			padding: 8px 20px;
+		}
+
+	}
+
+	&__search-overlay {
+		width: 0;
+		position: fixed;
+		top: 0;
+		left: -100%;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.2);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 10000;
+		backdrop-filter: blur(3px);
+		transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+		opacity: 0;
+
+		input[type="search"] {
+			width: 100%;
+			height: 60px;
+			padding: 15px;
+			background-color: transparent;
+			border: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			color: currentColor;
+			outline: none;
+			border-radius: 6px 0 0 6px;
+
+			@include abstracts.media-breakpoint(max-480) {
+				height: 50px;
+			}
+		}
+	}
+
+	&__inner-search-overlay {
+		display: flex;
+		max-width: 100%;
+		background-color: #fff;
+		border-radius: 6px;
+	}
+}

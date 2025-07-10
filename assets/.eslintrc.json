@@ -1,0 +1,17 @@
+{
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/recommended"
+    ],
+    "globals": {
+        "wp": false
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "jquery": true
+    },
+    "rules": {
+    }
+}

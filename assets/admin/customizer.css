@@ -1,0 +1,81 @@
+/* Admin CSS for Social Icons Repeater */
+.icon-preview-wrapper {
+    margin-bottom: 8px;
+    min-height: 20px;
+}
+.icon-preview {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+.social-icons-repeater-wrapper {
+    margin-top: 10px;
+}
+
+.social-icons-repeater-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.repeater-item {
+    border: 1px solid #dcdcdc;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.repeater-item input[type="text"],
+.repeater-item input[type="url"] {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccd0d4;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.remove-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #e53935;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background 0.2s ease;
+}
+
+.remove-icon:hover {
+    background: #c62828;
+}
+
+.add-icon {
+    background-color: #007cba;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 10px;
+}
+
+.add-icon:hover {
+    background-color: #005a9e;
+}

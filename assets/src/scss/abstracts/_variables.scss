@@ -1,0 +1,20 @@
+///// Please use below variable for getting color valur from wizard
+$green-press-wp-body-bg-color: var(--body-bg-color);
+$green-press-wp-body-text-color: var(--text-color);
+$green-press-wp-heading-color: var(--heading-color);
+$green-press-wp-text-link-color: var(--link-color);
+$green-press-wp-text-hover-link-color: var(--link-hover-color);
+$green-press-wp-header-bg-color: var(--header-bg-color);
+$green-press-wp-header-text-color: var(--header-nav-link-color);
+$green-press-wp-footer-bg-color: var(--footer-bg-color);
+$green-press-wp-footer-text-color: var(--footer-text-link-color);
+$green-press-wp-site-title-color: var(--site-title-color);
+$green-press-wp-site-tagline-color: var(--site-tagline-color);
+$green-press-wp-block-quote-color: var(--block-quote-color);
+$green-press-wp-post-card-bg-color: var(--post-card-bg-color);
+$green-press-wp-toc-bg-color: var(--toc-bg-color);
+$green-press-wp-toc-heading-color: var(--toc-heading-color);
+$green-press-wp-toc-text-color: var(--toc-text-color);
+
+$system-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$body-font-family: $system-font-family;

@@ -1,0 +1,14 @@
+@mixin media-breakpoint($size) {
+    @if $size == max-991 {
+        @media (max-width: 991px) { @content; }
+    } 
+    @else if $size == max-767 {
+        @media (max-width: 767px) { @content; }
+    }
+    @else if $size == max-480 {
+        @media (max-width: 480px) { @content; }
+    }
+    @else if $size == max-400 {
+        @media (max-width: 400px) { @content; }
+    }
+}

@@ -1,0 +1,53 @@
+@use '../abstracts';
+
+footer {
+	background-color: abstracts.$green-press-wp-footer-bg-color;
+
+	.site-info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 25px 0;
+		flex-wrap: wrap;
+		gap: 10px;
+
+		@include abstracts.media-breakpoint(max-400) {
+			flex-direction: column;
+		}
+
+		ul li {
+			display: inline-block;
+			margin-right: 10px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				color: abstracts.$green-press-wp-footer-text-color;
+				font-size: 16px;
+				text-decoration: 1.5px underline;
+				text-decoration-color: abstracts.$green-press-wp-footer-text-color;
+			}
+		}
+
+
+		.site-social-icon {
+			.social-link-label {
+				font-size: 16px;
+				font-weight: 400;
+				color: abstracts.$green-press-wp-footer-text-color;
+			}
+
+			svg {
+				fill: #fff;
+				position: relative;
+				top: 7px;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
