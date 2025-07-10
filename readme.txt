@@ -1,4 +1,4 @@
-=== Echo ===
+=== GreenPressWP ===
 Contributors: multidots
 Requires at least: 6.0
 Tested up to: 6.8
@@ -10,7 +10,7 @@ Tags: blog, theme
 
 == Description ==
 
-Echo is a sustainable WordPress theme designed to minimize environmental impact through efficient code, lightweight assets, and optimized performance. Ideal for eco-conscious websites, this theme supports modern WordPress features and promotes responsible web design.
+GreenPressWP is a sustainable WordPress theme designed to minimize environmental impact through efficient code, lightweight assets, and optimized performance. Ideal for eco-conscious websites, this theme supports modern WordPress features and promotes responsible web design.
 
 == Installation ==
 

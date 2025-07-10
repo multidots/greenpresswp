@@ -81,10 +81,10 @@ trait Singleton {
 			}
 
 			/*
-			 * Dependent items can use the `Echo_singleton_init_{$called_class}` hook to execute code
+			 * Dependent items can use the `GreenPressWP_singleton_init_{$called_class}` hook to execute code
 			 * immediately after _init() is called.
 			 */
-			do_action( sprintf( 'Echo_singleton_init_%s', $called_class ) );
+			do_action( sprintf( 'GreenPressWP_singleton_init_%s', $called_class ) );
 
 		}
 
