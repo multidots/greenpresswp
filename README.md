@@ -46,7 +46,7 @@ To set up your homepage to match the theme layout, follow these steps:
 - Add multiple **social media icons** to be displayed in the footer.
 
 ### Third-Party Integration
-- Also found under **Appearance → Customize → Theme Options → General Settings**.
+- Also found under **Appearance → Customize → Theme Options → Third Party Integration**.
 - Add custom **header and footer scripts** for analytics, tracking, or other third-party tools.
 
 
