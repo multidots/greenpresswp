@@ -13,9 +13,9 @@ use GreenPressWP\Includes\Blocks;
 use GreenPressWP\Includes\Traits\Singleton;
 
 /**
- * Class Echo_Main
+ * Class GreenPressWP
  */
-class Echo_Main {
+class GreenPressWP {
 	use Singleton;
 
 	/**
@@ -29,7 +29,7 @@ class Echo_Main {
 		Assets::get_instance();
 		Menus::get_instance();
 		Blocks::get_instance();
-		Echo_Customize::get_instance();
+		GreenPressWP_Customize::get_instance();
 		$this->setup_hooks();
 	}
 

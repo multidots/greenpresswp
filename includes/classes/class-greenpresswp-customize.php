@@ -13,9 +13,9 @@ use GreenPressWP\Includes\Traits\Singleton;
 use WP_Customize_Upload_Control;
 
 /**
- * Class Echo_Customize
+ * Class GreenPressWP_Customize
  */
-class Echo_Customize {
+class GreenPressWP_Customize {
 
 	use Singleton;
 

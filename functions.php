@@ -48,7 +48,7 @@ require_once GREEN_PRESS_WP_PATH . '/includes/helpers/autoloader.php';
  * @since 1.0.0
  */
 function gpwp_main_get_theme_instance(): void {
-	\GreenPressWP\Includes\Echo_Main::get_instance();
+	\GreenPressWP\Includes\GreenPressWP::get_instance();
 }
 gpwp_main_get_theme_instance();
 
