@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Functions.
+ * All Theme Functions.
  *
  * @package GreenPressWP
  */
