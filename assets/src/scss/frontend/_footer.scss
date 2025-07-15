@@ -6,10 +6,16 @@ footer {
 	.site-info {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 		padding: 25px 0;
 		flex-wrap: wrap;
 		gap: 10px;
+		.site-footer-content{
+				color: #fff;
+			p{
+				color: #fff;
+			}
+		}
 
 		@include abstracts.media-breakpoint(max-400) {
 			flex-direction: column;
