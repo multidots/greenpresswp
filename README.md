@@ -27,7 +27,7 @@ To set up your homepage to match the theme layout, follow these steps:
 1. Create a new page titled **Home** and add some content to it.
 2. Navigate to **Settings → Reading**, choose **"A static page"** under "Your homepage displays", and set the **Home** page as your **Homepage**.
 3. Visit your site’s frontend — you should now see your custom homepage content displayed.
-4. Go to **Appearance → Menus**, create menus for the **Header** and **Footer**, and assign them to the appropriate **Display Locations**.
+4. Go to **Appearance → Menus**, create menu for the **Header** and assign it to the  **Primary Menu**.
 5. Your homepage should now reflect the theme’s intended layout and design.
 
 ## Theme Features
@@ -49,6 +49,9 @@ To set up your homepage to match the theme layout, follow these steps:
 - Also found under **Appearance → Customize → Theme Options → Third Party Integration**.
 - Add custom **header and footer scripts** for analytics, tracking, or other third-party tools.
 
+### Footer
+- Go to **Appearance → Customize → Theme Options → Footer Settings**.
+- You can add here any text or HTML.
 
 ## Build Process
 
@@ -78,3 +81,9 @@ npm run start
 ```bash
 npm run build
 ```
+
+## Get In Touch
+
+<p align="center">
+<a href="https://www.multidots.com/contact-us/"><img src="https://www.multidots.com/wp-content/uploads/2025/06/01-GitHub-Footer.png" width="850"></a>
+</p>

@@ -10,6 +10,12 @@ footer {
 		padding: 25px 0;
 		flex-wrap: wrap;
 		gap: 10px;
+		.site-footer-content{
+				color: abstracts.$green-press-wp-footer-text-color;
+			p {
+				color: abstracts.$green-press-wp-footer-text-color;
+			}
+		}
 
 		@include abstracts.media-breakpoint(max-400) {
 			flex-direction: column;

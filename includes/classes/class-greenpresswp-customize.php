@@ -141,11 +141,11 @@ class GreenPressWP_Customize {
 			),
 			'footer_bg_color'        => array(
 				'label'   => __( 'Footer Background Color', 'green-press-wp' ),
-				'default' => '#222222',
+				'default' => '#f5f4f4',
 			),
 			'footer_text_link_color' => array(
 				'label'   => __( 'Footer Text & Navigation Link Color', 'green-press-wp' ),
-				'default' => '#ffffff',
+				'default' => '#000',
 			),
 		);
 
@@ -436,6 +436,32 @@ class GreenPressWP_Customize {
 				'label'   => __( 'Scripts in Footer', 'green-press-wp' ),
 				'section' => 'third_party_scripts_section',
 				'type'    => 'textarea',
+			)
+		);
+
+		// Footer Settings Section.
+		$wp_customize->add_section(
+			'footer_settings_section',
+			array(
+				'title' => __( 'Footer Settings', 'green-press-wp' ),
+				'panel' => 'theme_options_panel',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_text',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'wp_kses_post',
+			)
+		);
+		$wp_customize->add_control(
+			'footer_text',
+			array(
+				'label'       => __( 'Footer Text', 'green-press-wp' ),
+				'description' => __( 'Enter the text to display in the footer. HTML is allowed.', 'green-press-wp' ),
+				'section'     => 'footer_settings_section',
+				'type'        => 'textarea',
 			)
 		);
 
