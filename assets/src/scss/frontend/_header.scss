@@ -13,6 +13,10 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
+
+		@include abstracts.media-breakpoint(max-767) {
+			gap: 0;
+		}
 	}
 
 	.site-branding {
@@ -25,7 +29,10 @@
 
 		@include abstracts.media-breakpoint(max-767) {
 			gap: 8px;
-			width: 100px;
+			width: calc(100% - 195px);
+		}
+		@media screen and (max-width: 375px) {
+			width: calc(100% - 170px);
 		}
 		.site-branding-desc{
 			@include abstracts.media-breakpoint(max-767) {
@@ -37,13 +44,17 @@
 			line-height: normal;
 			flex-shrink: 0;
 			text-decoration: underline;
+			width: 100%;
+			display: flex;
 
 			img {
-				height: 75px;
+				height: 50px;
 				width: auto;
 
 				@include abstracts.media-breakpoint(max-767) {
-					height: 55px;
+					max-height: 40px;
+					height: auto;
+					width: auto;
 				}
 			}
 		}
@@ -168,7 +179,7 @@
 	justify-content: flex-end;
 
 	@include abstracts.media-breakpoint(max-767) {
-		width: calc(100% - 120px);
+		width: auto;
 	}
 
 }
@@ -186,10 +197,13 @@ ul#primary-menu {
 		height: max-content;
 		cursor: pointer;
 		@media screen and (max-width: 767px) {
-			font-size: 12px;
+			font-size: 14px;
 		}
 		@media screen and (max-width: 400px) {
-			margin-bottom: 10px;
+			margin-bottom: 0;
+		}
+		@media screen and (max-width: 375px) {
+			font-size: 12px;
 		}
 
 		a {
@@ -199,6 +213,11 @@ ul#primary-menu {
 			background-color: abstracts.$green-press-wp-header-text-color;
 			border-radius: 10px;
 			color: #fff;
+
+			@media screen and (max-width: 400px) {
+				padding: 6px 8px;
+				border-radius: 5px;
+			}
 		}
 	}
 }
