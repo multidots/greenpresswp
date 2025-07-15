@@ -141,11 +141,11 @@ class GreenPressWP_Customize {
 			),
 			'footer_bg_color'        => array(
 				'label'   => __( 'Footer Background Color', 'green-press-wp' ),
-				'default' => '#222222',
+				'default' => '#f5f4f4',
 			),
 			'footer_text_link_color' => array(
 				'label'   => __( 'Footer Text & Navigation Link Color', 'green-press-wp' ),
-				'default' => '#ffffff',
+				'default' => '#000',
 			),
 		);
 

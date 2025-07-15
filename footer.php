@@ -16,7 +16,10 @@
 						echo wp_kses_post( $footer_text );
 					else :
 						?>
-						<p><?php esc_html_e( 'Powered by Multidots.', 'green-press-wp' ); ?></p>
+						<p><?php esc_html_e( 'Powered by', 'green-press-wp' ); ?></p>
+						<a href="https://www.multidots.com/" target="_blank" rel="noopener noreferrer">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/multidots-logo.webp" alt="<?php esc_attr_e( 'Multidots Logo', 'green-press-wp' ); ?>">
+						</a>
 						<?php
 					endif;
 					?>

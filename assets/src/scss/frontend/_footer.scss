@@ -11,9 +11,9 @@ footer {
 		flex-wrap: wrap;
 		gap: 10px;
 		.site-footer-content{
-				color: #fff;
-			p{
-				color: #fff;
+				color: abstracts.$green-press-wp-footer-text-color;
+			p {
+				color: abstracts.$green-press-wp-footer-text-color;
 			}
 		}
 

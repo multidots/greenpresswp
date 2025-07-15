@@ -108,8 +108,8 @@ class Assets {
 		$site_tagline_color     = get_theme_mod( 'site_tagline_color', '#909090' );
 		$header_bg_color        = get_theme_mod( 'header_bg_color', '#ffffff' );
 		$header_nav_link_color  = get_theme_mod( 'header_nav_link_color', '#277a4b' );
-		$footer_bg_color        = get_theme_mod( 'footer_bg_color', '#222222' );
-		$footer_text_link_color = get_theme_mod( 'footer_text_link_color', '#ffffff' );
+		$footer_bg_color        = get_theme_mod( 'footer_bg_color', '#f5f4f4' );
+		$footer_text_link_color = get_theme_mod( 'footer_text_link_color', '#000' );
 
 		$inline_css = sprintf(
 			':root {
