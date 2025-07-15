@@ -74,29 +74,18 @@
 						</div>
 					<?php endif; ?>
 				</div><!-- .site-branding -->
-				<div class="header-nav-wrap">
-					<?php
-					if ( has_nav_menu( 'menu-1' ) ) :
-
-						if ( get_query_var( 'menu' ) ) :
-							?>
-							<a id="gpwp-back-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="menu-text-link">&#x2716;<span class="screen-reader-text"><?php esc_html_e( 'Close menu', 'green-press-wp' ); ?></span></a>
-							<script>
-								var gpwp_home_url = '<?php echo esc_url( home_url( '/' ) ); ?>';
-								if ( 0 === document.referrer.indexOf( gpwp_home_url ) ) {
-									document.getElementById( 'gpwp-back-link' ).href = document.referrer;
-								}
-							</script>
-							<?php
-						else :
-							?>
-							<a href="<?php echo esc_url( ( get_option( 'permalink_structure' ) ? home_url( '/menu/' ) : home_url( '/?menu' ) ) ); ?>" class="menu-text-link"><?php esc_html_e( 'Menu', 'green-press-wp' ); ?></a>
-							<?php
-						endif;
-
-					endif;
-					?>
-				</div>
+				<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+					<div class="header-nav-wrap">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+						?>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</header><!-- #masthead -->

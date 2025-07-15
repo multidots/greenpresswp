@@ -9,18 +9,17 @@
 	<footer id="colophon" class="site-footer">
 		<div class="container">
 			<div class="site-info">
-				<div class="site-footer-menu">
+				<div class="site-footer-content">
 					<?php
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'menu-2',
-								'menu_id'         => 'footer-menu',
-								'menu_class'      => 'footer-menu-list',
-								'container'       => 'ul',
-								'container_class' => 'footer-menu-list',
-							)
-						);
+					$footer_text = get_theme_mod( 'footer_text' );
+					if ( ! empty( $footer_text ) ) :
+						echo wp_kses_post( $footer_text );
+					else :
 						?>
+						<p><?php esc_html_e( 'Powered by Multidots.', 'green-press-wp' ); ?></p>
+						<?php
+					endif;
+					?>
 				</div>
 				<?php
 				$social_links = get_theme_mod( 'social_icons', '[]' );

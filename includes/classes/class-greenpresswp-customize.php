@@ -439,6 +439,32 @@ class GreenPressWP_Customize {
 			)
 		);
 
+		// Footer Settings Section.
+		$wp_customize->add_section(
+			'footer_settings_section',
+			array(
+				'title' => __( 'Footer Settings', 'green-press-wp' ),
+				'panel' => 'theme_options_panel',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_text',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'wp_kses_post',
+			)
+		);
+		$wp_customize->add_control(
+			'footer_text',
+			array(
+				'label'       => __( 'Footer Text', 'green-press-wp' ),
+				'description' => __( 'Enter the text to display in the footer. HTML is allowed.', 'green-press-wp' ),
+				'section'     => 'footer_settings_section',
+				'type'        => 'textarea',
+			)
+		);
+
 		// Custom Logo Control.
 		$control = $wp_customize->get_control( 'custom_logo' );
 
