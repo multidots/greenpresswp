@@ -6,7 +6,7 @@
  */
 
 /**
- * Class GreenPressWP_Customize
+ * Class Social_Icons
  */
 class Social_Icons extends WP_Customize_Control {
 
