@@ -5,6 +5,9 @@
     @else if $size == max-767 {
         @media (max-width: 767px) { @content; }
     }
+    @else if $size == max-600 {
+        @media (max-width: 600px) { @content; }
+    }
     @else if $size == max-480 {
         @media (max-width: 480px) { @content; }
     }

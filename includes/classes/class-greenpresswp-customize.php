@@ -439,6 +439,159 @@ class GreenPressWP_Customize {
 			)
 		);
 
+		// Header Settings Section.
+		$wp_customize->add_section(
+			'header_settings_section',
+			array(
+				'title' => __( 'Header Settings', 'green-press-wp' ),
+				'panel' => 'theme_options_panel',
+			)
+		);
+
+		// Show Buttons Instead of Menu.
+		$wp_customize->add_setting(
+			'show_buttons_instead_menu',
+			array(
+				'default'           => false,
+				'sanitize_callback' => 'rest_sanitize_boolean',
+			)
+		);
+		$wp_customize->add_control(
+			'show_buttons_instead_menu',
+			array(
+				'label'       => __( 'Show Buttons Instead of Menu', 'green-press-wp' ),
+				'description' => __( 'Check this to display header buttons instead of the navigation menu.', 'green-press-wp' ),
+				'section'     => 'header_settings_section',
+				'type'        => 'checkbox',
+			)
+		);
+
+		// Header Button 1 Settings.
+		$wp_customize->add_setting(
+			'header_button_1_text',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
+		$wp_customize->add_control(
+			'header_button_1_text',
+			array(
+				'label'           => __( 'Button 1 Text', 'green-press-wp' ),
+				'description'     => __( 'Enter the text for the first header button.', 'green-press-wp' ),
+				'section'         => 'header_settings_section',
+				'type'            => 'text',
+				'active_callback' => array(
+					$this,
+					'is_buttons_enabled',
+				),
+			)
+		);
+
+		$wp_customize->add_setting(
+			'header_button_1_url',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'esc_url_raw',
+			)
+		);
+		$wp_customize->add_control(
+			'header_button_1_url',
+			array(
+				'label'           => __( 'Button 1 URL', 'green-press-wp' ),
+				'description'     => __( 'Enter the URL for the first header button.', 'green-press-wp' ),
+				'section'         => 'header_settings_section',
+				'type'            => 'url',
+				'active_callback' => array(
+					$this,
+					'is_buttons_enabled',
+				),
+			)
+		);
+
+		$wp_customize->add_setting(
+			'header_button_1_new_window',
+			array(
+				'default'           => false,
+				'sanitize_callback' => 'rest_sanitize_boolean',
+			)
+		);
+		$wp_customize->add_control(
+			'header_button_1_new_window',
+			array(
+				'label'           => __( 'Open Button 1 in New Window', 'green-press-wp' ),
+				'section'         => 'header_settings_section',
+				'type'            => 'checkbox',
+				'active_callback' => array(
+					$this,
+					'is_buttons_enabled',
+				),
+			)
+		);
+
+		// Header Button 2 Settings.
+		$wp_customize->add_setting(
+			'header_button_2_text',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
+		$wp_customize->add_control(
+			'header_button_2_text',
+			array(
+				'label'           => __( 'Button 2 Text', 'green-press-wp' ),
+				'description'     => __( 'Enter the text for the second header button.', 'green-press-wp' ),
+				'section'         => 'header_settings_section',
+				'type'            => 'text',
+				'active_callback' => array(
+					$this,
+					'is_buttons_enabled',
+				),
+			)
+		);
+
+		$wp_customize->add_setting(
+			'header_button_2_url',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'esc_url_raw',
+			)
+		);
+		$wp_customize->add_control(
+			'header_button_2_url',
+			array(
+				'label'           => __( 'Button 2 URL', 'green-press-wp' ),
+				'description'     => __( 'Enter the URL for the second header button.', 'green-press-wp' ),
+				'section'         => 'header_settings_section',
+				'type'            => 'url',
+				'active_callback' => array(
+					$this,
+					'is_buttons_enabled',
+				),
+			)
+		);
+
+		$wp_customize->add_setting(
+			'header_button_2_new_window',
+			array(
+				'default'           => false,
+				'sanitize_callback' => 'rest_sanitize_boolean',
+			)
+		);
+		$wp_customize->add_control(
+			'header_button_2_new_window',
+			array(
+				'label'           => __( 'Open Button 2 in New Window', 'green-press-wp' ),
+				'section'         => 'header_settings_section',
+				'type'            => 'checkbox',
+				'active_callback' => array(
+					$this,
+					'is_buttons_enabled',
+				),
+			)
+		);
+
 		// Footer Settings Section.
 		$wp_customize->add_section(
 			'footer_settings_section',
@@ -632,5 +785,17 @@ class GreenPressWP_Customize {
 	public function is_system_font_selected( \WP_Customize_Control $control ): bool {
 		$font_type = $control->manager->get_setting( 'font_type' )->value();
 		return 'system' === $font_type;
+	}
+
+	/**
+	 * Check if Buttons are enabled instead of menu.
+	 *
+	 * @param \WP_Customize_Control $control Control object.
+	 *
+	 * @return bool
+	 */
+	public function is_buttons_enabled( \WP_Customize_Control $control ): bool {
+		$show_buttons = $control->manager->get_setting( 'show_buttons_instead_menu' )->value();
+		return (bool) $show_buttons;
 	}
 }

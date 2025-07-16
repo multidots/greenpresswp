@@ -14,8 +14,20 @@
 		align-items: center;
 		flex-wrap: wrap;
 
-		@include abstracts.media-breakpoint(max-767) {
-			gap: 0;
+		&.header-button {
+			@include abstracts.media-breakpoint(max-600) {
+				gap: 20px;
+				flex-direction: column;
+			}
+		}
+
+		&.menu-text-link {
+			.site-branding {
+
+				@include abstracts.media-breakpoint(max-600) {
+					width: calc(100% - 100px);
+				}
+			}
 		}
 	}
 
@@ -24,17 +36,24 @@
 		align-items: center;
 		text-align: left;
 		flex-shrink: 0;
-		gap: 20px;
+		gap: 10px;
 		width: 50%;
 
-		@include abstracts.media-breakpoint(max-767) {
+		&:has(.site-branding-desc) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		@include abstracts.media-breakpoint(max-991) {
+			width: 43%;
+		}
+
+		@include abstracts.media-breakpoint(max-600) {
 			gap: 8px;
-			width: calc(100% - 195px);
+			width: auto;
 		}
-		@media screen and (max-width: 375px) {
-			width: calc(100% - 170px);
-		}
-		.site-branding-desc{
+
+		.site-branding-desc {
 			@include abstracts.media-breakpoint(max-767) {
 				display: none;
 			}
@@ -50,9 +69,10 @@
 			img {
 				height: 50px;
 				width: auto;
-
+				min-height: 40px;
+				object-fit: contain;
 				@include abstracts.media-breakpoint(max-767) {
-					max-height: 40px;
+					max-height: 50px;
 					height: auto;
 					width: auto;
 				}
@@ -66,6 +86,7 @@
 			font-weight: 700;
 			text-transform: capitalize;
 			color: abstracts.$green-press-wp-site-title-color;
+			margin-bottom: 5px;
 
 			a {
 				color: abstracts.$green-press-wp-site-title-color;
@@ -75,7 +96,7 @@
 
 		.site-description {
 			margin-top: 3px;
-			line-height: 20.16px;
+			line-height: 24px;
 			text-transform: capitalize;
 			color: abstracts.$green-press-wp-site-tagline-color;
 
@@ -171,6 +192,33 @@
 	}
 }
 
+.header-buttons-wrap {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+
+	.header-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		padding: 10px;
+		border-radius: 10px;
+		background-color: abstracts.$green-press-wp-header-text-color;
+		color: #fff;
+		text-decoration: none;
+		font-size: 18px;
+		font-weight: 500;
+		@include abstracts.media-breakpoint(max-767) {
+			font-size: 16px;
+		}
+		@media screen and (max-width: 350px) {
+			width: 100%;
+		}
+	}
+}
+
 .header-nav-wrap {
 	display: flex;
 	flex-wrap: wrap;
@@ -182,43 +230,9 @@
 		width: auto;
 	}
 
-}
-ul#primary-menu {
-	display: flex;
-	gap: 20px;
-	list-style-type: none;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-		@media screen and (max-width: 767px) {
-			gap: 10px;
-		}
-
-	>li {
-		height: max-content;
-		cursor: pointer;
-		@media screen and (max-width: 767px) {
-			font-size: 14px;
-		}
-		@media screen and (max-width: 400px) {
-			margin-bottom: 0;
-		}
-		@media screen and (max-width: 375px) {
-			font-size: 12px;
-		}
-
-		a {
-			color: inherit;
-			text-decoration: none;
-			padding: 10px;
-			background-color: abstracts.$green-press-wp-header-text-color;
-			border-radius: 10px;
-			color: #fff;
-
-			@media screen and (max-width: 400px) {
-				padding: 6px 8px;
-				border-radius: 5px;
-			}
-		}
+	.menu-text-link {
+		font-weight: bold;
+		text-decoration: none;
 	}
 }
 

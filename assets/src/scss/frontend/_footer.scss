@@ -6,14 +6,43 @@ footer {
 	.site-info {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 		padding: 25px 0;
 		flex-wrap: wrap;
 		gap: 10px;
-		.site-footer-content{
-				color: abstracts.$green-press-wp-footer-text-color;
+
+		.site-footer-content {
+			color: abstracts.$green-press-wp-footer-text-color;
+
 			p {
 				color: abstracts.$green-press-wp-footer-text-color;
+				text-align: center;
+			}
+
+			a {
+				display: flex;
+
+				img {
+					height: 30px;
+				}
+			}
+		}
+
+		&:has(.site-social-icon) {
+			justify-content: space-between;
+
+			@include abstracts.media-breakpoint(max-400) {
+				gap: 15px;
+			}
+
+			.site-footer-content {
+				p {
+					text-align: left;
+
+					@include abstracts.media-breakpoint(max-400) {
+						text-align: center;
+					}
+				}
 			}
 		}
 
@@ -39,6 +68,8 @@ footer {
 
 
 		.site-social-icon {
+			display: flex;
+
 			.social-link-label {
 				font-size: 16px;
 				font-weight: 400;
@@ -53,6 +84,12 @@ footer {
 
 			a {
 				text-decoration: none;
+			}
+
+			li {
+				a {
+					display: flex;
+				}
 			}
 		}
 	}
