@@ -136,7 +136,7 @@ class GreenPressWP_Customize {
 				'default' => '#ffffff',
 			),
 			'header_nav_link_color'  => array(
-				'label'   => __( 'Header Navigation Link Color', 'green-press-wp' ),
+				'label'   => __( 'Header Navigation Link/Button Color', 'green-press-wp' ),
 				'default' => '#277A4B',
 			),
 			'footer_bg_color'        => array(
@@ -478,7 +478,7 @@ class GreenPressWP_Customize {
 			'header_button_1_text',
 			array(
 				'label'           => __( 'Button 1 Text', 'green-press-wp' ),
-				'description'     => __( 'Enter the text for the first header button.', 'green-press-wp' ),
+				'description'     => __( 'Enter the text for the first button.', 'green-press-wp' ),
 				'section'         => 'header_settings_section',
 				'type'            => 'text',
 				'active_callback' => array(
@@ -499,7 +499,7 @@ class GreenPressWP_Customize {
 			'header_button_1_url',
 			array(
 				'label'           => __( 'Button 1 URL', 'green-press-wp' ),
-				'description'     => __( 'Enter the URL for the first header button.', 'green-press-wp' ),
+				'description'     => __( 'Enter the URL for the first button.', 'green-press-wp' ),
 				'section'         => 'header_settings_section',
 				'type'            => 'url',
 				'active_callback' => array(
@@ -541,7 +541,7 @@ class GreenPressWP_Customize {
 			'header_button_2_text',
 			array(
 				'label'           => __( 'Button 2 Text', 'green-press-wp' ),
-				'description'     => __( 'Enter the text for the second header button.', 'green-press-wp' ),
+				'description'     => __( 'Enter the text for the second button.', 'green-press-wp' ),
 				'section'         => 'header_settings_section',
 				'type'            => 'text',
 				'active_callback' => array(
@@ -562,7 +562,7 @@ class GreenPressWP_Customize {
 			'header_button_2_url',
 			array(
 				'label'           => __( 'Button 2 URL', 'green-press-wp' ),
-				'description'     => __( 'Enter the URL for the second header button.', 'green-press-wp' ),
+				'description'     => __( 'Enter the URL for the second button.', 'green-press-wp' ),
 				'section'         => 'header_settings_section',
 				'type'            => 'url',
 				'active_callback' => array(
