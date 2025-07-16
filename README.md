@@ -27,7 +27,7 @@ To set up your homepage to match the theme layout, follow these steps:
 1. Create a new page titled **Home** and add some content to it.
 2. Navigate to **Settings → Reading**, choose **"A static page"** under "Your homepage displays", and set the **Home** page as your **Homepage**.
 3. Visit your site’s frontend — you should now see your custom homepage content displayed.
-4. Go to **Appearance → Menus**, create menu for the **Header** and assign it to the  **Primary Menu**.
+4. Go to **Appearance → Menus**, create menu for the **Header** and assign it to the  **Primary Menu**. If the page leads to a 404 error, try resaving the permalink settings and check again. Go to **Settings → Permalinks → Save Changes**
 5. Your homepage should now reflect the theme’s intended layout and design.
 
 ## Theme Features
@@ -49,7 +49,11 @@ To set up your homepage to match the theme layout, follow these steps:
 - Also found under **Appearance → Customize → Theme Options → Third Party Integration**.
 - Add custom **header and footer scripts** for analytics, tracking, or other third-party tools.
 
-### Footer
+### Header Settings
+- Go to **Appearance → Customize → Theme Options → Header Settings**.
+- From here you can select if you want to keep menu or the buttons. We have added two button fields here.
+
+### Footer Settings
 - Go to **Appearance → Customize → Theme Options → Footer Settings**.
 - You can add here any text or HTML.
 
