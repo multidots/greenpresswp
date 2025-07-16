@@ -26,7 +26,15 @@
 
 	<header id="masthead" class="gpwp-header site-header">
 		<div class="container">
-			<div class="gpwp-header-wrap">
+			<?php
+			$show_buttons_instead_menu = get_theme_mod( 'show_buttons_instead_menu', false );
+			if ( $show_buttons_instead_menu ) {
+				$btn_class = 'header-button';
+			} else {
+				$btn_class = 'menu-text-link';
+			}
+			?>
+			<div class="gpwp-header-wrap <?php echo esc_attr( $btn_class ); ?>">
 				<div class="site-branding">
 					<?php
 					$site_name   = get_theme_mod( 'gpwp_site_logo_title' );
@@ -74,15 +82,56 @@
 						</div>
 					<?php endif; ?>
 				</div><!-- .site-branding -->
-				<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+				<?php
+				
+				if ( $show_buttons_instead_menu ) :
+					// Header Buttons.
+					$button_1_text       = get_theme_mod( 'header_button_1_text' );
+					$button_1_url        = get_theme_mod( 'header_button_1_url' );
+					$button_1_new_window = get_theme_mod( 'header_button_1_new_window', false );
+
+					$button_2_text       = get_theme_mod( 'header_button_2_text' );
+					$button_2_url        = get_theme_mod( 'header_button_2_url' );
+					$button_2_new_window = get_theme_mod( 'header_button_2_new_window', false );
+
+					if ( ! empty( $button_1_text ) && ! empty( $button_1_url ) || ! empty( $button_2_text ) && ! empty( $button_2_url ) ) :
+						?>
+						<div class="header-buttons-wrap">
+							<?php if ( ! empty( $button_1_text ) && ! empty( $button_1_url ) ) : ?>
+								<a href="<?php echo esc_url( $button_1_url ); ?>" 
+									<?php echo $button_1_new_window ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>
+									class="header-button header-button-1">
+									<?php echo esc_html( $button_1_text ); ?>
+								</a>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $button_2_text ) && ! empty( $button_2_url ) ) : ?>
+								<a href="<?php echo esc_url( $button_2_url ); ?>" 
+									<?php echo $button_2_new_window ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>
+									class="header-button header-button-2">
+									<?php echo esc_html( $button_2_text ); ?>
+								</a>
+							<?php endif; ?>
+						</div>
+					<?php endif; ?>
+				<?php elseif ( has_nav_menu( 'menu-1' ) ) : ?>
 					<div class="header-nav-wrap">
 						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-							)
-						);
+						if ( get_query_var( 'menu' ) ) :
+							?>
+							<a id="gpwp-back-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="menu-text-link">&#x2716;<span class="screen-reader-text"><?php esc_html_e( 'Close menu', 'green-press-wp' ); ?></span></a>
+							<script>
+								var gpwp_home_url = '<?php echo esc_url( home_url( '/' ) ); ?>';
+								if ( 0 === document.referrer.indexOf( gpwp_home_url ) ) {
+									document.getElementById( 'gpwp-back-link' ).href = document.referrer;
+								}
+							</script>
+							<?php
+						else :
+							?>
+							<a href="<?php echo esc_url( ( get_option( 'permalink_structure' ) ? home_url( '/menu/' ) : home_url( '/?menu' ) ) ); ?>" class="menu-text-link"><?php esc_html_e( 'Menu', 'green-press-wp' ); ?></a>
+							<?php
+						endif;
 						?>
 					</div>
 				<?php endif; ?>

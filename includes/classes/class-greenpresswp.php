@@ -48,11 +48,14 @@ class GreenPressWP {
 		add_action( 'wp_head', array( $this, 'pingback_header' ) );
 		add_action( 'admin_init', array( $this, 'custom_editor_switch_setting' ) );
 		add_action( 'template_redirect', array( $this, 'start_html_minify' ) );
+		add_action( 'init', array( $this, 'gpwp_nav_rewrite_rule' ) );
 
 		/**
 		 * Filters.
 		 */
 		add_filter( 'use_block_editor_for_post', array( $this, 'custom_set_default_editor' ), 10, 2 );
+		add_filter( 'query_vars', array( $this, 'gpwp_register_query_var' ) );
+		add_filter( 'template_include', array( $this, 'gpwp_template_include' ) );
 	}
 
 	/**
@@ -254,5 +257,43 @@ class GreenPressWP {
 	 */
 	public function minify_output( string $buffer ): string {
 		return preg_replace( '/>\s+</', '><', $buffer );
+	}
+
+	/**
+	 * Register custom query variable for menu.
+	 *
+	 * @param array $vars Existing query variables.
+	 *
+	 * @return array Modified query variables.
+	 */
+	public function gpwp_register_query_var( array $vars ): array {
+		$vars[] = 'menu';
+
+		return $vars;
+	}
+
+	/**
+	 * Include the custom template for the menu.
+	 *
+	 * @param string $template Current template path.
+	 *
+	 * @return string Modified template path.
+	 */
+	public function gpwp_template_include( string $template ): string {
+		if ( get_query_var( 'menu' ) ) {
+			return get_template_directory() . '/menu.php';
+		}
+		return $template;
+	}
+
+	/**
+	 * Add rewrite rule for the custom menu URL.
+	 *
+	 * This allows us to access the menu via /menu/ URL.
+	 *
+	 * @return void
+	 */
+	public function gpwp_nav_rewrite_rule(): void {
+		add_rewrite_rule( 'menu', 'index.php?menu=true', 'top' );
 	}
 }
